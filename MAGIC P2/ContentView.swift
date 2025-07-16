@@ -12,8 +12,8 @@ struct ContentView: View {
         NavigationStack{
             Image("typewriter")
                 .resizable()
-                    .scaledToFit()
-                    .cornerRadius(20)
+                .scaledToFit()
+                .cornerRadius(20)
             VStack {
                 Text("Welcome!")
                     .font(.largeTitle.bold())
@@ -21,32 +21,41 @@ struct ContentView: View {
                 
                 
                 
-                    
+                
                 NavigationLink(destination: Stories()) {
                     Text("Stories")
-                        .fontWeight(.black)
-                        .foregroundColor(.black)
-                        .padding(4.0)
+                        .modifier(HeaderStyle())
+                        
                 }
                 
                 
                 
                 NavigationLink(destination: WordsTyped()) {
                     Text("Words Typed")
-                        .fontWeight(.black)
-                        .foregroundColor(.black)
-                        .padding(5.0)
+                        .modifier(HeaderStyle())
                 }
                 
-                Spacer()
+              
                 
-            
+                NavigationLink(destination: Points()) {
+                    Text("Points").modifier(HeaderStyle())
+                        
+                }
+                Spacer()
+                .padding()
             }
-            .padding()
         }
     }
+    
 }
-
+struct HeaderStyle: ViewModifier {
+     func body(content: Content) -> some View {
+        content
+             .fontWeight(.black)
+             .foregroundColor(.black)
+             .padding(5.0)
+     }
+}
 #Preview {
     ContentView()
 }

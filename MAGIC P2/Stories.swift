@@ -9,7 +9,25 @@ import SwiftUI
 
 struct Stories: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink(destination: Plot()) {
+            Text("Plot")
+                .modifier(HeaderStyle())
+                
+        }
+        
+        
+        
+        NavigationLink(destination: WordsTyped()) {
+            Text("Characters")
+                .modifier(HeaderStyle())
+        }
+        
+      
+        
+        NavigationLink(destination: Points()) {
+            Text("Points").modifier(HeaderStyle())
+        }
+        
     }
 }
 
