@@ -9,13 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            Image("typewriter")
+                .resizable()
+                    .scaledToFit()
+                    .cornerRadius(20)
+            VStack {
+                Text("Welcome!")
+                    .font(.largeTitle.bold())
+                Spacer()
+                
+                
+                
+                    
+                NavigationLink(destination: Stories()) {
+                    Text("Stories")
+                        .fontWeight(.black)
+                        .foregroundColor(.black)
+                        .padding(4.0)
+                }
+                
+                
+                
+                NavigationLink(destination: WordsTyped()) {
+                    Text("Words Typed")
+                        .fontWeight(.black)
+                        .foregroundColor(.black)
+                        .padding(5.0)
+                }
+                
+                Spacer()
+                
+            
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
