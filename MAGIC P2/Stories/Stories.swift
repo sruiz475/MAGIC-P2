@@ -9,6 +9,9 @@ import SwiftUI
 
 struct Stories: View {
     var body: some View {
+        VStack{
+        Text("Stories Page")
+        .navigationTitle("Main Menu")
         NavigationLink(destination: Plot()) {
             Text("Plot")
                 .modifier(HeaderStyle())
@@ -24,10 +27,15 @@ struct Stories: View {
         
       
         
-        NavigationLink(destination: Points()) {
-            Text("Points").modifier(HeaderStyle())
+            NavigationLink(destination: XP()) {
+                Text("XP").modifier(HeaderStyle())
+            }
         }
-        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            Color.teal.opacity(0.3)
+                .ignoresSafeArea()
+        }
     }
 }
 
