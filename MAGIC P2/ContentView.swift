@@ -48,9 +48,9 @@ struct HeaderStyle: ViewModifier {
              .fontWeight(.black)
              .foregroundColor(.black)
              .padding(5.0)
-             .border(Color.blue, width: 2)
+             .border(Color.black, width: 2)
              .cornerRadius(5)
-             .background(Color.blue)
+             .background(Color.white)
      }
 }
 #Preview {

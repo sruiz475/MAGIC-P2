@@ -9,7 +9,21 @@ import SwiftUI
 
 struct Points: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            Text("Plot page")
+                .navigationTitle("Plot")
+            
+            VStack(spacing: 20) {
+                ForEach(0..<50) { index in
+                    Text("Item \(index)")
+                        .frame(width: 300, height: 50)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+            }
+            .padding()
+        }
     }
 }
 

@@ -2,39 +2,50 @@
 //  Stories.swift
 //  MAGIC P2
 //
-//  Created by sruiz25 on 7/8/25.
+//  Created by sruiz25 on 7/29/25.
 //
 
 import SwiftUI
 
 struct Stories: View {
     var body: some View {
-        VStack{
-        Text("Stories Page")
-        .navigationTitle("Main Menu")
-        NavigationLink(destination: Plot()) {
-            Text("Plot")
-                .modifier(HeaderStyle())
-                
-        }
-        
-        
-        
-        NavigationLink(destination: WordsTyped()) {
-            Text("Characters")
-                .modifier(HeaderStyle())
-        }
-        
-      
-        
-            NavigationLink(destination: XP()) {
-                Text("XP").modifier(HeaderStyle())
+        VStack {
+            Image("books")
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(40)
+            
+            Spacer()
+            
+            NavigationLink(destination: ContentView()) {
+                Text("Home Page")
+                    .modifier(HeaderStyle())
             }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background {
-            Color.teal.opacity(0.3)
-                .ignoresSafeArea()
+            NavigationLink(destination: AddStory()) {
+                Text("Add Story")
+                    .modifier(HeaderStyle())
+            }
+            
+            Text("Your Stories")
+                .font(.largeTitle.bold())
+            
+            NavigationLink(destination: Plot()) {
+                Text("Plot")
+                    .modifier(HeaderStyle())
+            }
+            
+            NavigationLink(destination: Characters()) {
+                Text("Character")
+                    .modifier(HeaderStyle())
+            }
+            
+            NavigationLink(destination: XP()) {
+                Text("XP")
+                    .modifier(HeaderStyle())
+            }
+            
+            Spacer()
+       
         }
     }
 }
