@@ -9,36 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack {
-            NavigationStack{
-                Image("typewriter")
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(20)
-                Text("Welcome!")
-                    .navigationTitle("Main Menu")
-                    .font(.largeTitle.bold())
-                Spacer()
-                
-                NavigationLink(destination: Stories()) {
-                    Text("Stories")
-                        .modifier(HeaderStyle())
-                }
-                
-                NavigationLink(destination: WordsTyped()) {
-                    Text("Words Typed")
-                        .modifier(HeaderStyle())
-                }
-                
-                NavigationLink(destination: XP()) {
-                    Text("XP").modifier(HeaderStyle())
+        NavigationStack{
+            ZStack {
+                Color(red: 0.8, green: 0.7, blue: 0.9)
+                    .ignoresSafeArea()
+                VStack {
+                    
+                    Image("typewriter")
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(20)
+                    Text("Welcome!")
+                        .navigationTitle("Main Menu")
+                        .font(.largeTitle.bold())
+                        .navigationBarBackButtonHidden()
+                    Spacer()
+                    
+                    NavigationLink(destination: Stories()) {
+                        Text("Stories")
+                            .modifier(HeaderStyle())
+                    }
+                    
+                    NavigationLink(destination: WordsTyped()) {
+                        Text("Words Typed")
+                            .modifier(HeaderStyle())
+                    }
+                    
+                    NavigationLink(destination: XP()) {
+                        Text("XP").modifier(HeaderStyle())
+                        
+                    }
+                    Spacer()
                     
                 }
-                Spacer()
-                
+                .padding()
             }
-            
         }
     }
 }

@@ -28,6 +28,7 @@ struct Stories: View {
             
             Text("Your Stories")
                 .font(.largeTitle.bold())
+                .navigationTitle("Stories")
             
             NavigationLink(destination: Plot()) {
                 Text("Plot")
