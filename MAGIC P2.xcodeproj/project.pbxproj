@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4B4054812E43DD1E0021154B /* Story1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4054802E43DD1E0021154B /* Story1.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		4B40543D2E1DFAFA0021154B /* MAGIC P2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAGIC P2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4054802E43DD1E0021154B /* Story1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		4B4054342E1DFAF90021154B = {
 			isa = PBXGroup;
 			children = (
+				4B4054802E43DD1E0021154B /* Story1.swift */,
 				4B40543F2E1DFAFA0021154B /* MAGIC P2 */,
 				4B40543E2E1DFAFA0021154B /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4054812E43DD1E0021154B /* Story1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

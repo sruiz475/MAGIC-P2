@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ZStack {
-                Color(red: 0.8, green: 0.7, blue: 0.9)
+                Color(.lightGray)
                     .ignoresSafeArea()
                 VStack {
                     
@@ -30,8 +30,8 @@ struct ContentView: View {
                             .modifier(HeaderStyle())
                     }
                     
-                    NavigationLink(destination: WordsTyped()) {
-                        Text("Words Typed")
+                    NavigationLink(destination: Minutes()) {
+                        Text("Minutes")
                             .modifier(HeaderStyle())
                     }
                     

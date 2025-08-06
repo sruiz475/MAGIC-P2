@@ -35,6 +35,10 @@ struct AddStory: View {
                 Text("Story Page")
                     .modifier(HeaderStyle())
             }
+            NavigationLink(destination: Story1()) {
+                Text("Story 1")
+                    .modifier(HeaderStyle())
+            }
             NavigationView{
                 Form{
                     TextField("Title", text: $title)
