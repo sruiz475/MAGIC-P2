@@ -60,4 +60,5 @@ struct HeaderStyle: ViewModifier {
 }
 #Preview {
     ContentView()
+        .environmentObject(StoryManager())
 }

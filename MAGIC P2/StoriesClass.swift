@@ -39,5 +39,12 @@ class StoryManager: ObservableObject {
             stories = decoded
         }
     }
+    func deleteStory(_ story: Story) {
+            if let index = stories.firstIndex(where: { $0.id == story.id }) {
+                stories.remove(at: index)
+                saveStories()
+            }
+        }
+
 }
 

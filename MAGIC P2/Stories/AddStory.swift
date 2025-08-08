@@ -27,18 +27,18 @@ struct AddStory: View {
             
             Spacer()
             
-            NavigationLink(destination: ContentView()) {
-                Text("Home Page")
-                    .modifier(HeaderStyle())
-            }
-            NavigationLink(destination: Stories()) {
-                Text("Story Page")
-                    .modifier(HeaderStyle())
-            }
-            NavigationLink(destination: Story1()) {
-                Text("Story 1")
-                    .modifier(HeaderStyle())
-            }
+//            NavigationLink(destination: ContentView()) {
+//                Text("Home Page")
+//                    .modifier(HeaderStyle())
+//            }
+//            NavigationLink(destination: Stories()) {
+//                Text("Story Page")
+//                    .modifier(HeaderStyle())
+//            }
+//            NavigationLink(destination: Story1()) {
+//                Text("Story 1")
+//                    .modifier(HeaderStyle())
+//            }
             NavigationView{
                 Form{
                     TextField("Title", text: $title)
@@ -70,4 +70,5 @@ struct AddStory: View {
 
 #Preview {
     AddStory()
+        .environmentObject(StoryManager())
 }

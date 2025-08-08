@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Story1: View {
+    @EnvironmentObject var storyManager: StoryManager
+    
+    
     var body: some View {
         ZStack{
             Color(.lightGray)
@@ -24,20 +27,18 @@ struct Story1: View {
                     Text("Home Page")
                         .modifier(HeaderStyle())
                 }
-                NavigationLink(destination: AddStory()) {
-                    Text("Add Story")
-                        .modifier(HeaderStyle())
-                }
                 
-                Text("Story 1")
+                Text(storyManager.stories[0].title)
                     .font(.largeTitle.bold())
                     .navigationTitle("Story 1")
                     .navigationBarBackButtonHidden()
                 
-                NavigationLink(destination: Plot()) {
-                    Text("Plot")
-                        .modifier(HeaderStyle())
-                }
+                    
+                    
+                    Text("Genre: \(storyManager.stories[0].genre)")
+                        
+                    Text(storyManager.stories[0].plot)
+                        
                 
                 NavigationLink(destination: Characters()) {
                     Text("Character")
@@ -57,4 +58,5 @@ struct Story1: View {
 
 #Preview {
     Story1()
+        .environmentObject(StoryManager())
 }

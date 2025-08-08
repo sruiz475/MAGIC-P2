@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MAGIC_P2App: App {
+    @StateObject private var storyManager = StoryManager()
+    private var char: [String] = []
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(storyManager)
         }
     }
 }

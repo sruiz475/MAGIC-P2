@@ -11,6 +11,7 @@ struct Minutes: View {
     @State private var minutes: Int = 0
     var body: some View {
         ZStack{
+            Color(.lightGray)
             VStack{
                 
                     Image("Clock")
