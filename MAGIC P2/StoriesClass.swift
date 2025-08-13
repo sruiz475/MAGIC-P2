@@ -13,6 +13,7 @@ struct Story: Identifiable, Codable {
     var title: String
     var genre: String
     var plot: String
+    var char: [String]
 }
 class StoryManager: ObservableObject {
     @Published var stories: [Story] = [] {
@@ -25,7 +26,7 @@ class StoryManager: ObservableObject {
         loadStories()
     }
     func addStory(title: String, genre: String, plot: String) {
-        let newStory = Story(title: title, genre: genre, plot: plot)
+        let newStory = Story(title: title, genre: genre, plot: plot, char: [])
         stories.append(newStory)       // stories list holds newStory, which is a Story object defined by our Story class
     }
     private func saveStories() {    // encodes data of new story as a json file, with key to access
@@ -45,6 +46,16 @@ class StoryManager: ObservableObject {
                 saveStories()
             }
         }
+    func addChar(_ name: String, to storyID: UUID) {
+        if let index = stories.firstIndex(where: { $0.id == storyID }) {
+            stories[index].char.append(name)
+        }
+    }
+    
+    func removeCharacter(at indexSet: IndexSet, from storyID: UUID) {
+        guard let storyIndex = stories.firstIndex(where: { $0.id == storyID }) else { return }
+        stories[storyIndex].char.remove(atOffsets: indexSet)
+    }
 
 }
 

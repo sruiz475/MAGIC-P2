@@ -39,6 +39,8 @@ struct Minutes: View {
                     TextField("Minutes Typed", value: $minutes, format: .number)
                     
                 }
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)
             }
         }
     }
