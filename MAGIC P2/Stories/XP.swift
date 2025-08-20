@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct XP: View {
-    var body: some View {
-        ScrollView {
-            Text("Plot page")
-                .navigationTitle("Plot")
-            
+    @ObservedObject var xpManager: XPManager
+        var body: some View {
             VStack(spacing: 20) {
-                ForEach(0..<50) { index in
-                    Text("Item \(index)")
-                        .frame(width: 300, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                Text("Total XP: \(xpManager.xp)")
+                    .font(.title)
+                
+                Text("Badges Earned")
+                    .font(.headline)
+                
+                if xpManager.badges.isEmpty {
+                    Text("No badges yet!")
+                } else {
+                    ForEach(xpManager.badges, id: \.self) { badge in
+                        Text(badge)
+                            .font(.title2)
+                    }
                 }
+                
             }
             .padding()
+            .navigationTitle("Your Progress")
+            
         }
     }
-}
 
 #Preview {
-    XP()
+    XP(xpManager: XPManager())
 }

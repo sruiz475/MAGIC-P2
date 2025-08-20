@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var storyManager: StoryManager
+    @StateObject private var xpManager = XPManager()
     var body: some View {
         NavigationStack{
             ZStack {
@@ -25,21 +27,17 @@ struct ContentView: View {
                         .navigationBarBackButtonHidden()
                     Spacer()
                     
-                    NavigationLink(destination: Badges()) {
-                        Text("Go to Badges")
-                            .modifier(HeaderStyle())
-                        
                         NavigationLink(destination: Stories()) {
                             Text("Stories")
                                 .modifier(HeaderStyle())
                         }
                         
-                        NavigationLink(destination: Minutes()) {
+                        NavigationLink(destination: Minutes(xpManager: XPManager())) {
                             Text("Minutes")
                                 .modifier(HeaderStyle())
                         }
                         
-                        NavigationLink(destination: XP()) {
+                        NavigationLink(destination: XP(xpManager: XPManager())) {
                             Text("XP").modifier(HeaderStyle())
                             
                         }
@@ -52,16 +50,15 @@ struct ContentView: View {
             }
         }
     }
-    struct HeaderStyle: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .fontWeight(.black)
-                .foregroundColor(.black)
-                .padding(5.0)
-                .border(Color.black, width: 2)
-                .cornerRadius(5)
-                .background(Color.white)
-        }
+struct HeaderStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .fontWeight(.black)
+            .foregroundColor(.black)
+            .padding(5.0)
+            .border(Color.black, width: 2)
+            .cornerRadius(5)
+            .background(Color.white)
     }
 }
 #Preview {

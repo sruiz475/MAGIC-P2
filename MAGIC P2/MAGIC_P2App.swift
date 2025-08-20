@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct MAGIC_P2App: App {
     @StateObject private var storyManager = StoryManager()
+//    @StateObject private var xpManager = XPManager()
     private var char: [String] = []
     
     var body: some Scene {

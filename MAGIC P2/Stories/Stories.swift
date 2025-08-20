@@ -67,17 +67,6 @@ struct Stories: View {
         }
     }
 }
-struct HeaderStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .fontWeight(.black)
-            .foregroundColor(.black)
-            .padding(5.0)
-            .border(Color.black, width: 2)
-            .cornerRadius(5)
-            .background(Color.white)
-    }
-}
 
          
 #Preview {
