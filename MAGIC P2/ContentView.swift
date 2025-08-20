@@ -25,38 +25,44 @@ struct ContentView: View {
                         .navigationBarBackButtonHidden()
                     Spacer()
                     
-                    NavigationLink(destination: Stories()) {
-                        Text("Stories")
+                    NavigationLink(destination: Badges()) {
+                        Text("Go to Badges")
                             .modifier(HeaderStyle())
-                    }
-                    
-                    NavigationLink(destination: Minutes()) {
-                        Text("Minutes")
-                            .modifier(HeaderStyle())
-                    }
-                    
-                    NavigationLink(destination: XP()) {
-                        Text("XP").modifier(HeaderStyle())
+                        
+                        NavigationLink(destination: Stories()) {
+                            Text("Stories")
+                                .modifier(HeaderStyle())
+                        }
+                        
+                        NavigationLink(destination: Minutes()) {
+                            Text("Minutes")
+                                .modifier(HeaderStyle())
+                        }
+                        
+                        NavigationLink(destination: XP()) {
+                            Text("XP").modifier(HeaderStyle())
+                            
+                        }
+                        Spacer()
                         
                     }
-                    Spacer()
-                    
+                    .padding()
                 }
-                .padding()
+                
             }
         }
     }
-}
-struct HeaderStyle: ViewModifier {
-     func body(content: Content) -> some View {
-        content
-             .fontWeight(.black)
-             .foregroundColor(.black)
-             .padding(5.0)
-             .border(Color.black, width: 2)
-             .cornerRadius(5)
-             .background(Color.white)
-     }
+    struct HeaderStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .fontWeight(.black)
+                .foregroundColor(.black)
+                .padding(5.0)
+                .border(Color.black, width: 2)
+                .cornerRadius(5)
+                .background(Color.white)
+        }
+    }
 }
 #Preview {
     ContentView()
