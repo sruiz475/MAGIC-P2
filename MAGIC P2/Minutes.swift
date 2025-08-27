@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Minutes: View {
     @State private var inputMinutes: Int? = nil
-    @ObservedObject var xpManager: XPManager
+    @EnvironmentObject var xpManager: XPManager
     var body: some View {
         ZStack{
             Color(red: 0.75, green: 0.90, blue: 0.98)
@@ -63,5 +63,6 @@ struct Minutes: View {
     }
 
 #Preview {
-    Minutes(xpManager: XPManager())
+    Minutes()
+        .environmentObject(XPManager())
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var storyManager: StoryManager
-    @StateObject private var xpManager = XPManager()
+    @EnvironmentObject var xpManager: XPManager
     var body: some View {
         NavigationStack{
             ZStack {
@@ -32,15 +32,18 @@ struct ContentView: View {
                                 .modifier(HeaderStyle())
                         }
                         
-                        NavigationLink(destination: Minutes(xpManager: XPManager())) {
+                        NavigationLink(destination: Minutes()) {
                             Text("Minutes")
                                 .modifier(HeaderStyle())
                         }
                         
-                        NavigationLink(destination: XP(xpManager: XPManager())) {
+                        NavigationLink(destination: XP()) {
                             Text("XP").modifier(HeaderStyle())
                             
                         }
+                    Button("Clear"){
+                        xpManager.clearBadges()
+                    }
                         Spacer()
                         
                     }
@@ -64,4 +67,5 @@ struct HeaderStyle: ViewModifier {
 #Preview {
     ContentView()
         .environmentObject(StoryManager())
+        .environmentObject(XPManager())
 }

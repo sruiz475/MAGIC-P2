@@ -42,5 +42,9 @@ class XPManager: ObservableObject {
         return result
     }
     
+    func clearBadges(){
+        totalMinutes = 0
+        manualBadges.removeAll()
+    }
 }
 

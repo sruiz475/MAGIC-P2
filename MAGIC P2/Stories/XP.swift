@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct XP: View {
-    @ObservedObject var xpManager: XPManager
+    @EnvironmentObject var xpManager: XPManager
         var body: some View {
             VStack(spacing: 20) {
                 Text("Total XP: \(xpManager.xp)")
@@ -34,5 +34,7 @@ struct XP: View {
     }
 
 #Preview {
-    XP(xpManager: XPManager())
+//    XP(xpManager: XPManager())
+    XP()
+        .environmentObject(XPManager())
 }
