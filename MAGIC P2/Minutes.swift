@@ -12,7 +12,7 @@ struct Minutes: View {
     @ObservedObject var xpManager: XPManager
     var body: some View {
         ZStack{
-            Color(.lightGray)
+            Color(red: 0.75, green: 0.90, blue: 0.98)
             VStack{
                 
                 Image("Clock")
@@ -34,10 +34,10 @@ struct Minutes: View {
                             .keyboardType(.numberPad)
                         
                         Button("Add") {
-                            if let i = inputMinutes, i == 5 {
+                            if let i = inputMinutes, i == 20 {
                                 xpManager.totalMinutes += i
                                 inputMinutes = nil
-                                xpManager.manualBadges.append("Quick Write")
+                                xpManager.manualBadges.append("Writing Spree")
                             }
                             
                             else if let m = inputMinutes, m > 0 {

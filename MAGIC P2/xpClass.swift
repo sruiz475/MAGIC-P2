@@ -33,10 +33,10 @@ class XPManager: ObservableObject {
     // Badge system - to replace with names of the badges (can include emojis)
     var badges: [String] {
         var result: [String] = []
-        if xp >= 40 { result.append("🥉 Bronze") }
-        if xp >= 80 { result.append("🥈 Silver") }
-        if xp >= 160 { result.append("🥇 Gold") }
-        if xp >= 320 { result.append("🏆 Diamond") }
+        if xp >= 40 { result.append("🥉") }
+        if xp >= 80 { result.append("🥈") }
+        if xp >= 160 { result.append("🥇") }
+        if xp >= 320 { result.append("🏆") }
         
         result.append(contentsOf: manualBadges)
         return result
