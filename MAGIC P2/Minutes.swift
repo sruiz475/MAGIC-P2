@@ -34,10 +34,25 @@ struct Minutes: View {
                             .keyboardType(.numberPad)
                         
                         Button("Add") {
+                            if let i = inputMinutes, i == 5 {
+                                xpManager.totalMinutes += i
+                                inputMinutes = nil
+                                xpManager.manualBadges.append("Quick Write")
+                            }
                             if let i = inputMinutes, i == 20 {
                                 xpManager.totalMinutes += i
                                 inputMinutes = nil
                                 xpManager.manualBadges.append("Writing Spree")
+                            }
+                            if let i = inputMinutes, i == 40  {
+                                xpManager.totalMinutes += i
+                                inputMinutes = nil
+                                xpManager.manualBadges.append("Writing Marathon")
+                            }
+                            if let i = inputMinutes, i == 100 {
+                                xpManager.totalMinutes += i
+                                inputMinutes = nil
+                                xpManager.manualBadges.append("Championship Writer")
                             }
                             
                             else if let m = inputMinutes, m > 0 {

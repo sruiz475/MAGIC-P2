@@ -41,9 +41,13 @@ struct ContentView: View {
                             Text("XP").modifier(HeaderStyle())
                             
                         }
+                    Spacer()
+                    
                     Button("Clear"){
                         xpManager.clearBadges()
                     }
+                    
+                    
                         Spacer()
                         
                     }

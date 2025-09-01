@@ -9,7 +9,10 @@ import SwiftUI
 
 struct XP: View {
     @EnvironmentObject var xpManager: XPManager
-        var body: some View {
+    var body: some View {
+        ZStack{
+            Color(red: 0.75, green: 0.90, blue: 0.98)
+                .ignoresSafeArea()
             VStack(spacing: 20) {
                 Text("Total XP: \(xpManager.xp)")
                     .font(.title)
@@ -32,6 +35,7 @@ struct XP: View {
             
         }
     }
+}
 
 #Preview {
 //    XP(xpManager: XPManager())

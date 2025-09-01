@@ -17,6 +17,7 @@ struct AddStory: View {
     var body: some View {
         ScrollView {
             
+            
             Image("questionmarks")
                 .resizable()
                 .scaledToFit()
@@ -39,6 +40,7 @@ struct AddStory: View {
 //                Text("Story 1")
 //                    .modifier(HeaderStyle())
 //            }
+            
             NavigationView{
                 Form{
                     TextField("Title", text: $title)
